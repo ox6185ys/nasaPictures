@@ -1,0 +1,30 @@
+Index: views/apod_error.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- views/apod_error.hbs	(revision df621ffc1bedfc1f4272dec9488905e011b96827)
++++ views/apod_error.hbs	(revision )
+@@ -1,0 +1,7 @@
++<!--Display an error message to the viewer.-->
++
++<h1>An error occurred</h1>
++
++<h2>{{Error}}</h2>
++<P>Please try again later?</P>
++{{> navigation}}
+\ No newline at end of file
+Index: views/error.hbs
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- views/error.hbs	(revision df621ffc1bedfc1f4272dec9488905e011b96827)
++++ views/error.hbs	(revision )
+@@ -1,3 +1,5 @@
+-<h1>{{message}}</h1>
++<!--Display a problem to the author-->
++
++<h1>{{A Code Error Has Occurred}}</h1>
+ <h2>{{error.status}}</h2>
+ <pre>{{error.stack}}</pre>
