@@ -11,7 +11,7 @@ router.get('/fetch_picture', function (req, res, next) {
     if (req.query.today) {
         apod(function (data, error) {
             if (error) {
-                return res.render('apod_error', {error: error.message});
+                return res.render('apodError', {error: error.message});
             }
             return res.render('picture', {apod: data});
         }, true);
@@ -21,7 +21,7 @@ router.get('/fetch_picture', function (req, res, next) {
     else if (req.query.random) {
         apod(function (data, error) {
             if (error) {
-                return res.render('apod_error', {error: error.message});
+                return res.render('apodError', {error: error.message});
             }
             return res.render('picture', {apod: data});
         });
