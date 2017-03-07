@@ -14,7 +14,7 @@ function apodRequest(callback, today) {
 
     var queryParam = {};
     var APIKEY = process.env.APOD_API_KEY;  // Make sure an environment variable is set, containing a valid APOD key
-
+console.log(APIKEY)
     if (today) {
         queryParam = { 'api_key' : APIKEY };
     }
