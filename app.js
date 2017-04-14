@@ -32,8 +32,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Configure sessions, and session storage in MongoDB
 var mongo_pw = process.env.MONGO_PW;
-var url = 'mongodb://admin:' + mongo_pw + '@localhost:27017/helloSessions?authSource=admin';
+//var url = 'mongodb://localhost:27017/helloSessions';
+var url = process.env.MONGO_URL;
 
+if (!url){
+    url = "mongodb://pkelly8:Norakelly1@ds157320.mlab.com:57320/astropix_favorites"
+}
 var store = new MongoDBStore({
     uri : url,
     collection : 'sessions'
