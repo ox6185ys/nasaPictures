@@ -36,7 +36,7 @@ var mongo_pw = process.env.MONGO_PW;
 var url = process.env.MONGO_URL;
 
 if (!url){
-    url = "mongodb://pkelly8:Norakelly1@ds157320.mlab.com:57320/astropix_favorites"
+    url = "mongodb://webdev2560:cllarajames@ds157320.mlab.com:57320/astropix_favorites"
 }
 var store = new MongoDBStore({
     uri : url,
