@@ -12,7 +12,7 @@
 
 <P><a href="{{ apod.nasa_url }}">See this image at NASA's website</a></P>
 
-<div class="addToFavorites">  <form action="favorites/add" method="POST">
+<div class="addToFavorites">  <form action="favorites/add" method="POST">
     <input type="hidden" name="date" value="{{apod.date}}">
     <input type="hidden" name="title" value="{{apod.title}}">
     <input type="hidden" name="url" value="{{apod.url}}">

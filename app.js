@@ -15,7 +15,7 @@ var app = express();
 
 // view engine setup
 app.engine('.hbs', hbs({
-    extname:'.hbs',
+    extname: '.hbs',
     defaultLayout: 'layout'
 }));
 
@@ -26,7 +26,7 @@ app.set('view engine', 'hbs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -35,13 +35,14 @@ var mongo_pw = process.env.MONGO_PW;
 //var url = 'mongodb://localhost:27017/helloSessions';
 var url = process.env.MONGO_URL;
 
-if (!url){
-    url = "mongodb://webdev2560:cllarajames@ds157320.mlab.com:57320/astropix_favorites"
-}
+// if (!url){
+// //     url = "mongodb://webdev2560:cllarajames@ds157320.mlab.com:57320/astropix_favorites"
+// }
+console.log(url);
 var store = new MongoDBStore({
-    uri : url,
-    collection : 'sessions'
-}, function(error) {
+    uri: url,
+    collection: 'sessions'
+}, function (error) {
     // todo deal with error connection
     if (error) console.log(error)
 });
@@ -57,14 +58,14 @@ app.use('/', index);
 app.use('/favorites', favorites);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
